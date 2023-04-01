@@ -43,7 +43,7 @@ app.post('/ask-question', async (req, res) => {
 
         res.status(200).send(zippedChunks)
       } else {
-        res.status(404).send()
+        res.status(200).send([])
       }
     } catch (e) {
       // TODO: report to sentry or another error reporting service

@@ -18,6 +18,6 @@ interface AskResponse {
 }
 
 export const getChunks = async (question: string): Promise<Chunk[]> => {
-    const chunksRes = await axios.post<AskResponse>(INFERENCE_RUNNER_ENDPOINT, { question }, { headers: inferenceRunnerHeaders } )
+    const chunksRes = await axios.post<AskResponse>(`${INFERENCE_RUNNER_ENDPOINT}/ask`, { question }, { headers: inferenceRunnerHeaders } )
     return chunksRes.data.chunks.filter(chunk => chunk.confidence >= 70).sort((a, b) => b.confidence - a.confidence)
 }

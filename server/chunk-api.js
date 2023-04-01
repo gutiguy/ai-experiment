@@ -14,8 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getChunksData = exports.getToken = void 0;
 const axios_1 = __importDefault(require("axios"));
-const CHUNK_HOLDER_API_KEY = process.env.CHUNK_HOLDER_API_KEY;
-const CHUNK_CHOLDER_ENDPOINT = process.env.CHUNK_HOLDER_ENDPOINT || '';
+const CHUNK_HOLDER_API_KEY = process.env.AI_EXP_CHUNK_HOLDER_API_KEY;
+const CHUNK_CHOLDER_ENDPOINT = process.env.AI_EXP_CHUNK_HOLDER_ENDPOINT || '';
 const chunkHolderRequestHeaders = {
     'X-Api-Key': CHUNK_HOLDER_API_KEY,
 };

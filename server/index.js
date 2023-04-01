@@ -19,7 +19,7 @@ const inference_api_1 = require("./inference-api");
 const chunk_api_1 = require("./chunk-api");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
-    origin: process.env.CORS_ORIGIN
+    origin: process.env.AI_EXP_CORS_ORIGIN
 }));
 app.use(body_parser_1.default.json());
 const port = process.env.PORT || 8000;
@@ -47,7 +47,7 @@ app.post('/ask-question', (req, res) => __awaiter(void 0, void 0, void 0, functi
                 res.status(200).send(zippedChunks);
             }
             else {
-                res.status(404).send();
+                res.status(200).send([]);
             }
         }
         catch (e) {
